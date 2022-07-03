@@ -1,0 +1,31 @@
+schema {
+ query: Query
+}
+
+type Query{
+ findTodo(id: Int!): TodoInfoResponse,
+ findTodoList(status: String): TodoInfoListResponse
+}
+
+type Todo{
+ id: Int!,
+ text: String!,
+ status: TodoStatus!
+}
+
+enum TodoStatus {
+ ACTIVE, COMPLETE
+}
+
+type TodoInfoResponse{
+ id : Int!,
+ text: String!,
+ status: TodoStatus!,
+ createdDate: String!
+}
+
+type TodoInfoListResponse{
+ todoList : [TodoInfoResponse],
+ count : Int
+}
+
