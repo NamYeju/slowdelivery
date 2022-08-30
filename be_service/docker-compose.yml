@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        ELK_VERSION: 7.15.2
+        ELK_VERSION: 7.15.1
     container_name: es
     environment:
       - node.name=single-node

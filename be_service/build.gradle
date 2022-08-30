@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.slow'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '1.8'
 
 configurations {
     compileOnly {
@@ -25,7 +25,7 @@ dependencies {
     implementation ('org.springframework.boot:spring-boot-starter-jdbc')
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.data:spring-data-elasticsearch:4.2.2'   // elasticsearch
+    implementation 'org.springframework.data:spring-data-elasticsearch:4.4.2'   // elasticsearch
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
