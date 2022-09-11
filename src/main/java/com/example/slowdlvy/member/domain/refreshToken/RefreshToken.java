@@ -1,4 +1,4 @@
-package com.example.slowdlvy.domain.refreshToken;
+package com.example.slowdlvy.member.domain.refreshToken;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

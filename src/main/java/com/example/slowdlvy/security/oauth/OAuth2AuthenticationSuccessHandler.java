@@ -3,7 +3,7 @@ package com.example.slowdlvy.security.oauth;
 import com.example.slowdlvy.security.dto.PrincipalDetails;
 import com.example.slowdlvy.security.dto.TokenInfo;
 import com.example.slowdlvy.security.jwt.JwtManager;
-import com.example.slowdlvy.service.member.RefreshTokenService;
+import com.example.slowdlvy.member.application.RefreshTokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;

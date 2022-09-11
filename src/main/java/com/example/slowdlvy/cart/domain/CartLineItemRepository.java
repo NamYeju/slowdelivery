@@ -1,4 +1,4 @@
-package com.example.slowdlvy.domain.cart;
+package com.example.slowdlvy.cart.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

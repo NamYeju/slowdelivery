@@ -1,4 +1,4 @@
-package com.example.slowdlvy.domain.member;
+package com.example.slowdlvy.member.domain;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,7 +1,7 @@
-package com.example.slowdlvy.controller.cart;
+package com.example.slowdlvy.cart.presentation;
 
-import com.example.slowdlvy.controller.cart.dto.CartRequestDto;
-import com.example.slowdlvy.service.cart.CartService;
+import com.example.slowdlvy.cart.presentation.dto.CartRequestDto;
+import com.example.slowdlvy.cart.application.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

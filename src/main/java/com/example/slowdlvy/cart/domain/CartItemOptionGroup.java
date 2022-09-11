@@ -1,7 +1,6 @@
-package com.example.slowdlvy.domain.cart;
+package com.example.slowdlvy.cart.domain;
 
 import lombok.AccessLevel;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;

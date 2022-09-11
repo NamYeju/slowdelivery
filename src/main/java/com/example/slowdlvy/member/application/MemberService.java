@@ -1,12 +1,12 @@
-package com.example.slowdlvy.service.member;
+package com.example.slowdlvy.member.application;
 
 import com.example.slowdlvy.Exception.CustomException;
 import com.example.slowdlvy.Exception.ErrorCode;
 import com.example.slowdlvy.Exception.ErrorResponse;
-import com.example.slowdlvy.controller.Member.dto.MemberRequestDto;
-import com.example.slowdlvy.domain.member.Member;
-import com.example.slowdlvy.domain.member.MemberRepository;
-import com.example.slowdlvy.domain.member.Provider;
+import com.example.slowdlvy.member.presentation.dto.MemberRequestDto;
+import com.example.slowdlvy.member.domain.Member;
+import com.example.slowdlvy.member.domain.MemberRepository;
+import com.example.slowdlvy.member.domain.Provider;
 import com.example.slowdlvy.security.dto.PrincipalDetails;
 import com.example.slowdlvy.security.dto.TokenInfo;
 import com.example.slowdlvy.security.jwt.JwtManager;

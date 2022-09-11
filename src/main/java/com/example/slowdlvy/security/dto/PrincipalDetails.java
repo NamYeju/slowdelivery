@@ -1,6 +1,6 @@
 package com.example.slowdlvy.security.dto;
 
-import com.example.slowdlvy.domain.member.Member;
+import com.example.slowdlvy.member.domain.Member;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

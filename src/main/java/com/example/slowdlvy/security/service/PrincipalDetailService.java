@@ -1,7 +1,7 @@
 package com.example.slowdlvy.security.service;
 
-import com.example.slowdlvy.domain.member.Member;
-import com.example.slowdlvy.domain.member.MemberRepository;
+import com.example.slowdlvy.member.domain.Member;
+import com.example.slowdlvy.member.domain.MemberRepository;
 import com.example.slowdlvy.security.dto.PrincipalDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

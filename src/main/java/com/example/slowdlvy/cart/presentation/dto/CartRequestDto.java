@@ -1,9 +1,9 @@
-package com.example.slowdlvy.controller.cart.dto;
+package com.example.slowdlvy.cart.presentation.dto;
 
-import com.example.slowdlvy.domain.cart.Cart;
-import com.example.slowdlvy.domain.cart.CartItemOption;
-import com.example.slowdlvy.domain.cart.CartItemOptionGroup;
-import com.example.slowdlvy.domain.cart.CartLineItem;
+import com.example.slowdlvy.cart.domain.Cart;
+import com.example.slowdlvy.cart.domain.CartItemOption;
+import com.example.slowdlvy.cart.domain.CartItemOptionGroup;
+import com.example.slowdlvy.cart.domain.CartLineItem;
 import lombok.Getter;
 
 import java.util.List;

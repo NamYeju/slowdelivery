@@ -1,14 +1,13 @@
-package com.example.slowdlvy.service.cart;
+package com.example.slowdlvy.cart.application;
 
-import com.example.slowdlvy.controller.cart.dto.CartRequestDto;
-import com.example.slowdlvy.domain.cart.Cart;
-import com.example.slowdlvy.domain.cart.CartLineItem;
-import com.example.slowdlvy.domain.cart.CartLineItemRepository;
-import com.example.slowdlvy.domain.cart.CartRepository;
+import com.example.slowdlvy.cart.presentation.dto.CartRequestDto;
+import com.example.slowdlvy.cart.domain.Cart;
+import com.example.slowdlvy.cart.domain.CartLineItem;
+import com.example.slowdlvy.cart.domain.CartLineItemRepository;
+import com.example.slowdlvy.cart.domain.CartRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Optional;
 

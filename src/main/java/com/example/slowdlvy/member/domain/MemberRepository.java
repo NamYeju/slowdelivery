@@ -1,5 +1,6 @@
-package com.example.slowdlvy.domain.member;
+package com.example.slowdlvy.member.domain;
 
+import com.example.slowdlvy.member.domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

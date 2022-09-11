@@ -1,7 +1,7 @@
-package com.example.slowdlvy.service.member;
+package com.example.slowdlvy.member.application;
 
-import com.example.slowdlvy.domain.refreshToken.RefreshToken;
-import com.example.slowdlvy.domain.refreshToken.RefreshTokenRepository;
+import com.example.slowdlvy.member.domain.refreshToken.RefreshToken;
+import com.example.slowdlvy.member.domain.refreshToken.RefreshTokenRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

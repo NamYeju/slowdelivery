@@ -1,6 +1,6 @@
 package com.example.slowdlvy.security.oauth.provider;
 
-import com.example.slowdlvy.domain.member.Provider;
+import com.example.slowdlvy.member.domain.Provider;
 
 public interface OAuth2UserInfo {
     String getProviderId();

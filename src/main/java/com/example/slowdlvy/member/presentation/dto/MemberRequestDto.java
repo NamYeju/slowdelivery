@@ -1,4 +1,4 @@
-package com.example.slowdlvy.controller.Member.dto;
+package com.example.slowdlvy.member.presentation.dto;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;

@@ -2,14 +2,13 @@ package com.example.slowdlvy.security.service;
 
 import com.example.slowdlvy.Exception.CustomException;
 import com.example.slowdlvy.Exception.ErrorCode;
-import com.example.slowdlvy.domain.member.Member;
-import com.example.slowdlvy.domain.member.MemberRepository;
+import com.example.slowdlvy.member.domain.Member;
+import com.example.slowdlvy.member.domain.MemberRepository;
 import com.example.slowdlvy.security.dto.PrincipalDetails;
 import com.example.slowdlvy.security.oauth.provider.GoogleUserInfo;
 import com.example.slowdlvy.security.oauth.provider.NaverUserInfo;
 import com.example.slowdlvy.security.oauth.provider.OAuth2UserInfo;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
