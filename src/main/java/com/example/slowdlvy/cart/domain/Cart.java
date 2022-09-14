@@ -17,36 +17,22 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long shopId;
     private Long memberId;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.REMOVE)
-    private List<CartLineItem> cartLineItems = new ArrayList<>();
-
     @Builder
-    public Cart(Long shopId, Long memberId){
-        this.shopId = shopId;
+    public Cart(Long memberId){
         this.memberId = memberId;
     }
 
-    public List<CartLineItem> getCartLineItems(){
-        return this.cartLineItems;
-    }
+//    @OneToMany(mappedBy = "cart", cascade = CascadeType.REMOVE)
+//    private List<CartLineItem> cartLineItems = new ArrayList<>();
+//
+//    public List<CartLineItem> getCartLineItems(){
+//        return this.cartLineItems;
+//    }
 
-    public Boolean isEqualByShop(Long shopId){
-        return this.shopId.equals(shopId);
-    }
-
-    public Boolean isEmptyCart(){
-        if(this.cartLineItems.size()==0){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    public Long getId(){
-        return this.id;
-    }
+//    public Long getId(){
+//        return this.id;
+//    }
 }
 

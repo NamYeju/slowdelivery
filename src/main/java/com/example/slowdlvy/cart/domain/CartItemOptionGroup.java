@@ -1,6 +1,7 @@
 package com.example.slowdlvy.cart.domain;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -15,7 +16,11 @@ public class CartItemOptionGroup {
     @Column(name = "CART_ITEM_OPTION_GROUP_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long optionGroupId;
     private String name;
+
+    @Enumerated(EnumType.STRING)
+    private RequiredStatus requiredStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CART_LINE_ITEM_ID")
@@ -24,11 +29,14 @@ public class CartItemOptionGroup {
     @OneToMany(mappedBy = "cartItemOptionGroup", cascade = CascadeType.ALL)
     private List<CartItemOption> cartItemOptions = new ArrayList<>();
 
-    public CartItemOptionGroup(String name, List<CartItemOption> cartItemOptions){
+    public CartItemOptionGroup(Long optionGroupId, String name, RequiredStatus requiredStatus,List<CartItemOption> options){
+        this.optionGroupId = optionGroupId;
         this.name = name;
-        this.cartItemOptions.addAll(cartItemOptions);
-        cartItemOptions.forEach(a->a.setCartItemOptionGroup(this));
+        this.requiredStatus = requiredStatus;
+        this.cartItemOptions.addAll(options);
+        options.stream().forEach(cartItemOption -> cartItemOption.setCartItemOptionGroup(this));
     }
+
 
     public void setCartLineItem(CartLineItem cartLineItem){
         this.cartLineItem = cartLineItem;

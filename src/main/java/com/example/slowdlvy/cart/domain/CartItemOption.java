@@ -13,6 +13,7 @@ public class CartItemOption {
     @Column(name = "CART_ITEM_OPTION_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long optionId;
     private String name;
     private int price;
 
@@ -20,9 +21,11 @@ public class CartItemOption {
     @JoinColumn(name = "CART_ITEM_OPTION_GROUP_ID")
     private CartItemOptionGroup cartItemOptionGroup;
 
-    public CartItemOption(String name, int price){
+    public CartItemOption(Long optionId, String name, int price){
+        this.optionId = optionId;
         this.name = name;
         this.price = price;
+
     }
 
     public void setCartItemOptionGroup(CartItemOptionGroup cartItemOptionGroup){

@@ -16,9 +16,11 @@ public class CartLineItem {
     @Column(name = "CART_LINE_ITEM_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long shopId;
+    private Long productId;
+    private int quantity;
     private String name;
     private int price;
-    private int quantity;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CART_ID")
@@ -28,16 +30,18 @@ public class CartLineItem {
     private List<CartItemOptionGroup> cartItemOptionGroups = new ArrayList<>();
 
     @Builder
-    public CartLineItem(String name, int price, int quantity,List<CartItemOptionGroup> cartItemOptionGroups){
+    public CartLineItem(Long shopId, Long productId, int quantity, String name, int price, List<CartItemOptionGroup> cartItemOptionGroups){
+        this.shopId = shopId;
+        this.productId = productId;
+        this.quantity = quantity;
         this.name = name;
         this.price = price;
-        this.quantity = quantity;
         this.cartItemOptionGroups.addAll(cartItemOptionGroups);
-        cartItemOptionGroups.stream().forEach(a -> a.setCartLineItem(this));
+        cartItemOptionGroups.stream().forEach(cartItemOptionGroup -> cartItemOptionGroup.setCartLineItem(this));
     }
 
     public void setCart(Cart cart){
         this.cart = cart;
-        cart.getCartLineItems().add(this);
+        //cart.getCartLineItems().add(this);
     }
 }
