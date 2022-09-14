@@ -1,53 +1,72 @@
 package com.example.slowdlvy.cart.presentation.dto;
 
-import com.example.slowdlvy.cart.domain.Cart;
-import com.example.slowdlvy.cart.domain.CartItemOption;
-import com.example.slowdlvy.cart.domain.CartItemOptionGroup;
-import com.example.slowdlvy.cart.domain.CartLineItem;
+import com.example.slowdlvy.cart.domain.*;
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class CartRequestDto {
 
     @Getter
-    public static class addCart{
+    public static class addCartLineItem{
         private Long shopId;
-        private Long memberId;
-        private Long menuId;
-        private String menuName;
-        private int menuPrice;
-        private int menuQuantity;
-        private List<addCartItemOptionGroup> addCartItemOptionGroups;
-
-        public Cart toCart(){
-            return new Cart(shopId,memberId);
-        }
+        private Long id;
+        private String name;
+        private int price;
+        private int orderQuantity;
+        private List<ingredientGroup> ingredientGroups;
+        private List<optionGroup> optionGroups;
 
         public CartLineItem toCartLineItem(){
-            return new CartLineItem(menuName, menuPrice, menuQuantity, addCartItemOptionGroups.stream().map(a->a.toCartItemOptionGroup()).collect(Collectors.toList()));
+            return CartLineItem.builder()
+                    .shopId(shopId)
+                    .productId(id)
+                    .quantity(orderQuantity)
+                    .name(name)
+                    .price(price)
+                    .cartItemOptionGroups(this.toCartItemOptionGroups()).build();
+        }
+
+        private List<CartItemOptionGroup> toCartItemOptionGroups(){
+            List<CartItemOptionGroup> optionGroups = new ArrayList<>();
+            optionGroups.addAll(this.ingredientGroups.stream().map(a->a.toCartItemOptionGroup()).collect(Collectors.toList()));
+            optionGroups.addAll(this.optionGroups.stream().map(a->a.toCartItemOptionGroup()).collect(Collectors.toList()));
+            return optionGroups;
         }
     }
 
-    @Getter
-    public static class addCartItemOptionGroup{
-        private String groupName;
-        private List<addCartItemOption> addCartItemOptions;
+
+    public static class ingredientGroup{
+        private Long id;
+        private String name;
+        private List<option> ingredients;
 
         public CartItemOptionGroup toCartItemOptionGroup(){
-            return new CartItemOptionGroup(groupName, addCartItemOptions.stream().map(b->b.toCartItemOption()).collect(Collectors.toList()));
+            return new CartItemOptionGroup(id, name, RequiredStatus.INGREDIENT, ingredients.stream().map(a->a.toCartItemOption()).collect(Collectors.toList()));
         }
     }
 
-    @Getter
-    public static class addCartItemOption{
-        private String optionName;
-        private int optionPrice;
 
-        public CartItemOption toCartItemOption(){
-            return new CartItemOption(this.optionName, this.optionPrice);
+    public static class optionGroup{
+        private Long id;
+        private String name;
+        private List<option> options;
+
+        public CartItemOptionGroup toCartItemOptionGroup(){
+            return new CartItemOptionGroup(id, name, RequiredStatus.OPTION, options.stream().map(a->a.toCartItemOption()).collect(Collectors.toList()));
         }
+    }
 
+
+    public static class option{
+        private Long id;
+        private String name;
+        private int price;
+
+        private CartItemOption toCartItemOption(){
+            return new CartItemOption(id, name, price);
+        }
     }
 }
