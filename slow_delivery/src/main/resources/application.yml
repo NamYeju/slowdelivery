@@ -1,0 +1,45 @@
+spring:
+  session:
+    store-type: jdbc
+  redis:
+    host: localhost
+    port: 6379
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpa/h2/bin/be_shop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 500
+    open-in-view: false
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+
+#logging.level:
+#  root: warn
+#  org.hibernate.SQL: warn
+#  org.hibernate.type: warn
+#decorator:
+#  datasource:
+#    p6spy:
+#      enable-logging: false
+
+springfox:
+  documentation:
+    auto-startup: false
+
+jwt:
+  header: Authorization
+  secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
+  token-validity-in-seconds: 86400
+
+feign:
+  url:
+    be-service: https://localhost:8080
